@@ -297,7 +297,7 @@ jobs:
   e2e-create-react-app:
     name: E2E - create-react-app
     needs: e2e-publish
-    runs-on: ubuntu-laters
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

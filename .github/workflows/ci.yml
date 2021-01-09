@@ -295,9 +295,8 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: verdaccio-workspace
-          path: |
-            /tmp/verdaccio-workspace/storage
-            /tmp/verdaccio-workspace/htpassword
+          path: /tmp/verdaccio-workspace
+
       - name: Display structure of downloaded files
         run: ls -R
       - name: Display workspace

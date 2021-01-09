@@ -308,5 +308,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: verdaccio-workspace
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Test
         run: ./scripts/integration-tests/e2e-create-react-app.sh

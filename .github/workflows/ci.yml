@@ -291,10 +291,12 @@ jobs:
         with:
           name: verdaccio-workspace
           path: |
-            /verdaccio-workspace/storage
-            /verdaccio-workspace/htpassword
+            /tmp/verdaccio-workspace/storage
+            /tmp/verdaccio-workspace/htpassword
       - name: Display structure of downloaded files
         run: ls -R
+      - name: Display workspace
+        run: ls -R /tmp/verdaccio-workspace
 
   e2e-create-react-app:
     name: E2E - create-react-app
@@ -312,5 +314,7 @@ jobs:
           name: verdaccio-workspace
       - name: Display structure of downloaded files
         run: ls -R
+      - name: Display workspace
+        run: ls -R /tmp/verdaccio-workspace
       - name: Test
         run: ./scripts/integration-tests/e2e-create-react-app.sh

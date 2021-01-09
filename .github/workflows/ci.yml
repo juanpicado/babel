@@ -114,6 +114,7 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: yarn-${{ hashFiles('yarn.lock') }}
+
       - name: Install
         run: yarn install
       - uses: actions/download-artifact@v2
@@ -283,8 +284,12 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
       - uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: yarn-${{ hashFiles('yarn.lock') }}
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            /tmp/verdaccio-workspace
+          key: |
+            yarn-${{ hashFiles('yarn.lock') }}
+            ver-${{ hashFiles('yarn.lock') }}
       - name: Publish
         run: ./scripts/integration-tests/publish-local.sh
       - uses: actions/upload-artifact@v2

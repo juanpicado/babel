@@ -266,7 +266,7 @@ jobs:
         run: make test-typescript
 
   e2e-publish:
-    name: Publish to local Verdaccio registry
+    name: Publish to local Verdaccio registry (juan test)
     needs: prepare-yarn-cache
     runs-on: ubuntu-latest
     steps:

@@ -54,7 +54,7 @@ middlewares:
 
 # log settings
 logs:
-  - { type: stdout, format: pretty, level: http }
+  - { type: stdout, format: pretty, level: trace }
   #- {type: file, path: verdaccio.log, level: info}
 #experiments:
 #  # support for npm token command
